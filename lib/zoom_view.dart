@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -85,6 +86,9 @@ class ZoomViewController {
     optionMap.putIfAbsent("disableTitlebar", () => options.disableTitlebar);
     optionMap.putIfAbsent("noDisconnectAudio", () => options.noDisconnectAudio);
     optionMap.putIfAbsent("noAudio", () => options.noAudio);
+    optionMap.putIfAbsent("noParticipantsButton", () => options.noParticipantsButton);
+    optionMap.putIfAbsent("noTextPassword", () => options.noTextPassword);
+    optionMap.putIfAbsent("noTextMeetingId", () => options.noTextMeetingId);
 
     return _methodChannel.invokeMethod('start', optionMap);
   }
@@ -101,6 +105,9 @@ class ZoomViewController {
     optionMap.putIfAbsent("disableTitlebar", () => options.disableTitlebar);
     optionMap.putIfAbsent("noDisconnectAudio", () => options.noDisconnectAudio);
     optionMap.putIfAbsent("viewOptions", () => options.viewOptions);
+    optionMap.putIfAbsent("noParticipantsButton", () => options.noParticipantsButton);
+    optionMap.putIfAbsent("noTextPassword", () => options.noTextPassword);
+    optionMap.putIfAbsent("noTextMeetingId", () => options.noTextMeetingId);
     optionMap.putIfAbsent("noAudio", () => options.noAudio);
 
     return _methodChannel.invokeMethod('join', optionMap);

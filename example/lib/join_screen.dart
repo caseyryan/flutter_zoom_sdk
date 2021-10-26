@@ -8,11 +8,13 @@ class JoinWidget extends StatefulWidget {
   @override
   _JoinWidgetState createState() => _JoinWidgetState();
 }
-
 class _JoinWidgetState extends State<JoinWidget> {
-
-  TextEditingController meetingIdController = TextEditingController();
-  TextEditingController meetingPasswordController = TextEditingController();
+  TextEditingController meetingIdController = TextEditingController(
+    text: '95477506214',
+  );
+  TextEditingController meetingPasswordController = TextEditingController(
+    text: 'Y2htZFl6WThBZWM5bHVwZnNLc0xkQT09',
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +34,22 @@ class _JoinWidgetState extends State<JoinWidget> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: TextField(
-                    controller: meetingIdController,
+                  controller: meetingIdController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Meeting ID',
-                  ),),
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: TextField(
-                    controller: meetingPasswordController,
+                  controller: meetingPasswordController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
-                  ),),
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -102,29 +106,29 @@ class _JoinWidgetState extends State<JoinWidget> {
     );
   }
 
-
   joinMeeting(BuildContext context) {
-    if(meetingIdController.text.isNotEmpty && meetingPasswordController.text.isNotEmpty){
+    if (meetingIdController.text.isNotEmpty &&
+        meetingPasswordController.text.isNotEmpty) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) {
-            return MeetingWidget(meetingId: meetingIdController.text, meetingPassword: meetingPasswordController.text);
+            return MeetingWidget(
+                meetingId: meetingIdController.text,
+                meetingPassword: meetingPasswordController.text);
           },
         ),
       );
-    }else{
-      if(meetingIdController.text.isEmpty){
+    } else {
+      if (meetingIdController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text("Enter a valid meeting id to continue."),
         ));
-      }
-      else if(meetingPasswordController.text.isEmpty){
+      } else if (meetingPasswordController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text("Enter a meeting password to start."),
         ));
       }
     }
-
   }
 
   startMeeting(BuildContext context) {

@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter_zoom_sdk/zoom_view.dart';
-import 'package:flutter_zoom_sdk/zoom_options.dart';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_sdk/zoom_options.dart';
+import 'package:flutter_zoom_sdk/zoom_view.dart';
 
 // ignore: must_be_immutable
 class StartMeetingWidget extends StatefulWidget {
@@ -16,12 +15,13 @@ class StartMeetingWidget extends StatefulWidget {
   StartMeetingWidget({Key? key, meetingId}) : super(key: key) {
     this.zoomOptions = new ZoomOptions(
       domain: "zoom.us",
-      appKey: "apiKey",
-      appSecret: "appSecret",
+      appKey: "tYcFMsdEXBkW9oXrK39xbkzEtNkhZPxbbjeb",
+      appSecret: "bi43TIfWjS2tuWd48Htw0gPoGcZENzMNQmUQ",
     );
     this.loginOptions = new ZoomMeetingOptions(
-        userId: 'username', //pass host email for zoom
-        meetingPassword: 'pass', //pass host password for zoom
+        userId: 'Some Coolguy',
+        meetingPassword: '',
+        meetingId: '',
         disableDialIn: "false",
         disableDrive: "false",
         disableInvite: "false",

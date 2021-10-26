@@ -282,9 +282,36 @@ public class ZoomView  implements PlatformView,
         opts.no_dial_in_via_phone = parseBoolean(options, "disableDialIn", false);
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
-        boolean view_options = parseBoolean(options, "viewOptions", false);
-        if(view_options){
-            opts.meeting_views_options = MeetingViewsOptions.NO_TEXT_MEETING_ID + MeetingViewsOptions.NO_TEXT_PASSWORD;
+        int meetingViewOptions = 0;
+        boolean noParticipantsButton = parseBoolean(
+                options, "noParticipantsButton",
+                false
+        );
+        boolean noTextMeetingId = parseBoolean(
+                options, "noTextMeetingId",
+                true
+        );
+        boolean noTextPassword = parseBoolean(
+                options, "noTextPassword",
+                true
+        );
+        if (noParticipantsButton) {
+            meetingViewOptions += MeetingViewsOptions.NO_BUTTON_PARTICIPANTS;
+        }
+        if (noTextMeetingId) {
+            meetingViewOptions += MeetingViewsOptions.NO_TEXT_MEETING_ID;
+        }
+        if (noTextPassword) {
+            meetingViewOptions += MeetingViewsOptions.NO_TEXT_PASSWORD;
+        }
+
+        boolean viewOptions = parseBoolean(
+                options,
+                "viewOptions",
+                false
+        );
+        if(viewOptions){
+            opts.meeting_views_options = meetingViewOptions;
         }
 
         JoinMeetingParams params = new JoinMeetingParams();
