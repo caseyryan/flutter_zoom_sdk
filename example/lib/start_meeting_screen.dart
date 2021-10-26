@@ -29,7 +29,7 @@ class StartMeetingWidget extends StatefulWidget {
         disableTitlebar: "false",
         viewOptions: "false",
         noAudio: "false",
-        noDisconnectAudio: "false"
+        noDisconnectAudio: "false",
     );
   }
 

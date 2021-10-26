@@ -78,3 +78,4 @@
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 .fvm/flutter_sdk
 .fvm/fvm_config.json
+example/lib/join_screen.dart

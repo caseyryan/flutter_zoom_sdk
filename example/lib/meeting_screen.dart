@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_sdk/zoom_view.dart';
 import 'package:flutter_zoom_sdk/zoom_options.dart';
+import 'package:flutter_zoom_sdk/zoom_view.dart';
 
 // ignore: must_be_immutable
 class MeetingWidget extends StatelessWidget {
@@ -30,7 +30,8 @@ class MeetingWidget extends StatelessWidget {
         disableTitlebar: "false",
         viewOptions: "true",
         noAudio: "false",
-        noDisconnectAudio: "false"
+        noDisconnectAudio: "false",
+        noParticipantsButton: "true"
     );
   }
 

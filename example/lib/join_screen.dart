@@ -8,12 +8,13 @@ class JoinWidget extends StatefulWidget {
   @override
   _JoinWidgetState createState() => _JoinWidgetState();
 }
+
 class _JoinWidgetState extends State<JoinWidget> {
   TextEditingController meetingIdController = TextEditingController(
-    text: '95477506214',
+    text: '98129846959',
   );
   TextEditingController meetingPasswordController = TextEditingController(
-    text: 'Y2htZFl6WThBZWM5bHVwZnNLc0xkQT09',
+    text: 'YlZpMklOT2ZSb1hpSG1jZkUveFdjdz09',
   );
 
   @override
@@ -113,8 +114,9 @@ class _JoinWidgetState extends State<JoinWidget> {
         MaterialPageRoute(
           builder: (context) {
             return MeetingWidget(
-                meetingId: meetingIdController.text,
-                meetingPassword: meetingPasswordController.text);
+              meetingId: meetingIdController.text,
+              meetingPassword: meetingPasswordController.text,
+            );
           },
         ),
       );
