@@ -11,10 +11,10 @@ class JoinWidget extends StatefulWidget {
 
 class _JoinWidgetState extends State<JoinWidget> {
   TextEditingController meetingIdController = TextEditingController(
-    text: '98129846959',
+    text: '94897193522',
   );
   TextEditingController meetingPasswordController = TextEditingController(
-    text: 'YlZpMklOT2ZSb1hpSG1jZkUveFdjdz09',
+    text: 'cEtoTi94QktUeW1STjlaZE1YZzVSZz09',
   );
 
   @override

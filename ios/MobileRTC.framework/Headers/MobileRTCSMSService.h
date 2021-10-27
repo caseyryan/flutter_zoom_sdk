@@ -101,7 +101,7 @@
 /*!
  @brief set default cellphone for signed account.
  @param countryCode, the user account's country code.
- @param phoneNum, default phoen number.
+ @param phoneNum, default phoneNum number.
  @return yes, for set success.
  */
 - (BOOL)setDefaultCellPhoneInfo:(NSString * _Nullable)countryCode phoneNum:(NSString * _Nullable)phoneNum;
