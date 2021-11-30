@@ -1,3 +1,5 @@
+## 0.1.0
+- More events for ios
 ## 0.0.6
 
 - Start meeting for login user
