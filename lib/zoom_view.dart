@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_zoom_sdk/zoom_options.dart';
 
-
 typedef void ZoomViewCreatedCallback(ZoomViewController controller);
 
 class ZoomView extends StatefulWidget {
@@ -55,16 +54,13 @@ class _ZoomViewState extends State<ZoomView> {
 
 class ZoomViewController {
   ZoomViewController._(int id)
-      : _methodChannel =
-            new MethodChannel('com.evilratt/flutter_zoom_sdk'),
-        _zoomStatusEventChannel =
-            new EventChannel("com.evilratt/zoom_event_stream");
+      : _methodChannel = new MethodChannel('com.evilratt/flutter_zoom_sdk'),
+        _zoomStatusEventChannel = new EventChannel("com.evilratt/zoom_event_stream");
 
   final MethodChannel _methodChannel;
   final EventChannel _zoomStatusEventChannel;
 
   Future<dynamic> initZoom(ZoomOptions options) async {
-
     var optionMap = new Map<String, String?>();
     optionMap.putIfAbsent("appKey", () => options.appKey);
     optionMap.putIfAbsent("appSecret", () => options.appSecret);
@@ -123,8 +119,10 @@ class ZoomViewController {
     optionMap.putIfAbsent("setHostVideoOff", () => options.setHostVideoOff);
     optionMap.putIfAbsent("setAttendeeVideoOff", () => options.setAttendeeVideoOff);
     optionMap.putIfAbsent("setTimeZoneId", () => options.setTimeZoneId);
-    optionMap.putIfAbsent("setEnableMeetingToPublic", () => options.setEnableMeetingToPublic);
-    optionMap.putIfAbsent("setEnableLanguageInterpretation", () => options.setEnableLanguageInterpretation);
+    optionMap.putIfAbsent(
+        "setEnableMeetingToPublic", () => options.setEnableMeetingToPublic);
+    optionMap.putIfAbsent(
+        "setEnableLanguageInterpretation", () => options.setEnableLanguageInterpretation);
     optionMap.putIfAbsent("setEnableWaitingRoom", () => options.setEnableWaitingRoom);
     optionMap.putIfAbsent("enableAutoRecord", () => options.enableAutoRecord);
     optionMap.putIfAbsent("autoLocalRecord", () => options.autoLocalRecord);
@@ -150,7 +148,6 @@ class ZoomViewController {
   }
 
   Future<dynamic> meetingStatus(String meetingId) async {
-
     var optionMap = new Map<String, String>();
     optionMap.putIfAbsent("meetingId", () => meetingId);
 

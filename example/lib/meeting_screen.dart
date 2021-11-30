@@ -37,7 +37,7 @@ class MeetingWidget extends StatelessWidget {
 
   bool _isMeetingEnded(String status) {
     var result = false;
-
+    print('STATUS: $status');
     if (Platform.isAndroid)
       result = status == "MEETING_STATUS_DISCONNECTING" || status == "MEETING_STATUS_FAILED";
     else

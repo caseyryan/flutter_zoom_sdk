@@ -10,11 +10,12 @@ class JoinWidget extends StatefulWidget {
 }
 
 class _JoinWidgetState extends State<JoinWidget> {
+  // https://zoom.us/j/97079021528?pwd=aFBkeTVmL3NFM3ZUbDVIZXFKMDQrUT09
   TextEditingController meetingIdController = TextEditingController(
-    text: '94897193522',
+    text: '97079021528',
   );
   TextEditingController meetingPasswordController = TextEditingController(
-    text: 'cEtoTi94QktUeW1STjlaZE1YZzVSZz09',
+    text: 'aFBkeTVmL3NFM3ZUbDVIZXFKMDQrUT09',
   );
 
   @override
