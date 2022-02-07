@@ -7,8 +7,8 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_sdk/zoom_web.dart';
 
-const jwtAPIKey = "tYcFMsdEXBkW9oXrK39xbkzEtNkhZPxbbjeb";
-const jwtAPISecret = "bi43TIfWjS2tuWd48Htw0gPoGcZENzMNQmUQ";
+const jwtAPIKey = "AWI786lsRFuWO5_enZJvWQ";
+const jwtAPISecret = "9cMl03I1swVeX693O3Gvmv3Sqb9yjuHYJfhZ";
 
 class JoinScreenWeb extends StatefulWidget {
   @override
@@ -17,12 +17,12 @@ class JoinScreenWeb extends StatefulWidget {
 
 class _JoinScreenWebState extends State<JoinScreenWeb> {
   TextEditingController _meetingIdController = TextEditingController(
-    text: '7756607548',
-    // text: '91907195190',
+    // text: '7756607548',
+    text: '91907195190',
   );
   TextEditingController _meetingPasswordController = TextEditingController(
-    // text: 'NEV2YUVRTjFYamQyblJkb01lbmhCdz09',
-    text: '',
+    text: 'NEV2YUVRTjFYamQyblJkb01lbmhCdz09',
+    // text: '',
   );
   Timer? timer;
 
@@ -130,8 +130,8 @@ class _JoinScreenWebState extends State<JoinScreenWeb> {
   void _joinMeeting(BuildContext context) {
     ZoomOptions zoomOptions = new ZoomOptions(
         domain: "zoom.us",
-        appKey: jwtAPIKey,
-        appSecret: jwtAPISecret,
+        // appKey: jwtAPIKey,
+        // appSecret: jwtAPISecret,
         language: "en-US", // Optional
         showMeetingHeader: true, // Optional
         disableInvite: true, // Optional
@@ -202,12 +202,10 @@ class _JoinScreenWebState extends State<JoinScreenWeb> {
           jwtAPIKey,
           jwtAPISecret,
           _meetingIdController.text,
-          1,
+          0,
         );
         meetingOptions.jwtAPIKey = jwtAPIKey;
-        // meetingOptions.jwtSignature = signature;
-        // meetingOptions.jwtAPIKey = '';
-        meetingOptions.jwtSignature = '';
+        meetingOptions.jwtSignature = signature;
         
 
         zoom.joinMeeting(meetingOptions).then((joinMeetingResult) {
