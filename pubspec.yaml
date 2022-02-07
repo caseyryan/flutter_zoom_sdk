@@ -12,6 +12,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  zoom_platform_interface: ^1.0.3+3 
+  js: ^0.6.3
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +30,6 @@ flutter:
         pluginClass: FlutterZoomSdkPlugin
       ios:
         pluginClass: FlutterZoomSdkPlugin
+      web:
+        pluginClass: ZoomWeb
+        fileName: zoom_web.dart

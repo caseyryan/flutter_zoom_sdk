@@ -4,17 +4,17 @@ import 'package:flutter_zoom_sdk_example/start_meeting_screen.dart';
 
 import 'meeting_screen.dart';
 
-class JoinWidget extends StatefulWidget {
+class JoinScreenMobile extends StatefulWidget {
   @override
-  _JoinWidgetState createState() => _JoinWidgetState();
+  _JoinScreenMobileState createState() => _JoinScreenMobileState();
 }
 
-class _JoinWidgetState extends State<JoinWidget> {
+class _JoinScreenMobileState extends State<JoinScreenMobile> {
   // https://zoom.us/j/97079021528?pwd=aFBkeTVmL3NFM3ZUbDVIZXFKMDQrUT09
-  TextEditingController meetingIdController = TextEditingController(
+  TextEditingController _meetingIdController = TextEditingController(
     text: '97079021528',
   );
-  TextEditingController meetingPasswordController = TextEditingController(
+  TextEditingController _meetingPasswordController = TextEditingController(
     text: 'aFBkeTVmL3NFM3ZUbDVIZXFKMDQrUT09',
   );
 
@@ -23,7 +23,7 @@ class _JoinWidgetState extends State<JoinWidget> {
     // new page needs scaffolding!
     return Scaffold(
       appBar: AppBar(
-        title: Text('Join meeting'),
+        title: Text('Join meeting mobile'),
       ),
       body: Container(
         child: Padding(
@@ -36,7 +36,7 @@ class _JoinWidgetState extends State<JoinWidget> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: TextField(
-                  controller: meetingIdController,
+                  controller: _meetingIdController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Meeting ID',
@@ -46,7 +46,7 @@ class _JoinWidgetState extends State<JoinWidget> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: TextField(
-                  controller: meetingPasswordController,
+                  controller: _meetingPasswordController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
@@ -109,24 +109,24 @@ class _JoinWidgetState extends State<JoinWidget> {
   }
 
   joinMeeting(BuildContext context) {
-    if (meetingIdController.text.isNotEmpty &&
-        meetingPasswordController.text.isNotEmpty) {
+    if (_meetingIdController.text.isNotEmpty &&
+        _meetingPasswordController.text.isNotEmpty) {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) {
-            return MeetingWidget(
-              meetingId: meetingIdController.text,
-              meetingPassword: meetingPasswordController.text,
+            return MeetingScreen(
+              meetingId: _meetingIdController.text,
+              meetingPassword: _meetingPasswordController.text,
             );
           },
         ),
       );
     } else {
-      if (meetingIdController.text.isEmpty) {
+      if (_meetingIdController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text("Enter a valid meeting id to continue."),
         ));
-      } else if (meetingPasswordController.text.isEmpty) {
+      } else if (_meetingPasswordController.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text("Enter a meeting password to start."),
         ));
@@ -138,7 +138,7 @@ class _JoinWidgetState extends State<JoinWidget> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return StartMeetingWidget(meetingId: meetingIdController.text);
+          return StartMeetingWidget(meetingId: _meetingIdController.text);
         },
       ),
     );
@@ -148,7 +148,7 @@ class _JoinWidgetState extends State<JoinWidget> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return ScheduleMeeting(meetingId: meetingIdController.text);
+          return ScheduleMeeting(meetingId: _meetingIdController.text);
         },
       ),
     );

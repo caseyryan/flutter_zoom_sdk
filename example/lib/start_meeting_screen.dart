@@ -8,17 +8,17 @@ import 'package:flutter_zoom_sdk/zoom_view.dart';
 // ignore: must_be_immutable
 class StartMeetingWidget extends StatefulWidget {
 
-  late ZoomOptions zoomOptions;
-  late ZoomMeetingOptions loginOptions;
+  static late ZoomOptions zoomOptions;
+  static late ZoomMeetingOptions loginOptions;
 
 
   StartMeetingWidget({Key? key, meetingId}) : super(key: key) {
-    this.zoomOptions = new ZoomOptions(
+    zoomOptions = new ZoomOptions(
       domain: "zoom.us",
       appKey: "tYcFMsdEXBkW9oXrK39xbkzEtNkhZPxbbjeb",
       appSecret: "bi43TIfWjS2tuWd48Htw0gPoGcZENzMNQmUQ",
     );
-    this.loginOptions = new ZoomMeetingOptions(
+    loginOptions = new ZoomMeetingOptions(
         userId: 'Some Coolguy',
         meetingPassword: '',
         meetingId: '',
@@ -70,7 +70,7 @@ class _StartMeetingWidgetState extends State<StartMeetingWidget> {
 
                 print("Created the view");
 
-                controller.initZoom(this.widget.zoomOptions)
+                controller.initZoom(StartMeetingWidget.zoomOptions)
                     .then((results) {
                   print(results);
 
@@ -86,7 +86,7 @@ class _StartMeetingWidgetState extends State<StartMeetingWidget> {
 
                     print("listen on event channel");
 
-                    controller.login(this.widget.loginOptions).then((loginResult) {
+                    controller.login(StartMeetingWidget.loginOptions).then((loginResult) {
                       print("LoginResultBool :- " + loginResult.toString());
                       if(loginResult){
                         print("LoginResult :- Logged In");

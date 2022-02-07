@@ -6,14 +6,14 @@ import 'package:flutter_zoom_sdk/zoom_options.dart';
 import 'package:flutter_zoom_sdk/zoom_view.dart';
 
 // ignore: must_be_immutable
-class MeetingWidget extends StatelessWidget {
+class MeetingScreen extends StatelessWidget {
 
   late ZoomOptions zoomOptions;
   late ZoomMeetingOptions meetingOptions;
 
   late Timer timer;
 
-  MeetingWidget({Key? key, meetingId, meetingPassword}) : super(key: key) {
+  MeetingScreen({Key? key, meetingId, meetingPassword}) : super(key: key) {
     this.zoomOptions = new ZoomOptions(
       domain: "zoom.us",
       appKey: "XKE4uWfeLwWEmh78YMbC6mqKcF8oM4YHTr9I",
